@@ -17,10 +17,26 @@ def sms_reply():
     
     #Guide message
     if msg.upper() == "HI":
-        resp.message("Hi there \nYou can update your account using this string")
+        resp.message("""
+Hi there
+
+This message is sent for guiding you how you can update your data in our database.
+        
+You can update your company detail or job title detail by messageing us like the following:
+        
+Company: <new Company name>
+or
+Job: <new Job title>
+""")
         return str(resp)
     else:
-        resp.message("You said: {}".format(msg))
+        li = msg.split(":");
+        if (li[0].upper().find("COMPANY") != -1):
+            resp.message("Your company: {}".format(li[1].strip()))
+        elif (li[0].upper().find("JOB") != -1):
+            resp.message("Your Job Title: {}".format(li[1].strip()))
+        else:
+            resp.message("Invalid Update")
         return str(resp)
     
 
