@@ -2,7 +2,7 @@
 
 ## Reason for creating this project 
 
-Database are easy to make but hard to update. 
+Database are easy to make but hard to maintain. 
 
 Similar case occurred in my college, when data of our seniors about "which company they are working" and "on what post they are currently" this data was getting tough to manage as they didn't have any convenient way to update their status.
 
